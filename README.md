@@ -4,6 +4,18 @@ gouseful is a package that provides some useful, generic functions offered by ot
 
 see detailed usage below
 
+## General
+
+<br>
+
+`Compare` - compares two variables of any type (even non-comparables) by converting them both to strings
+```go
+fmt.Println(gouseful.Compare([]int{1,2,3},[]int{2,3,4}))
+```
+output: `false`
+
+<br>
+
 ## Arrays 
 see tests/arrays_test.go
 
