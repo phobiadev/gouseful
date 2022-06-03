@@ -43,7 +43,7 @@ output: `[1 5 3 2]`
 `MapOver` - applies the function provided to each of the elements in the array, and returns the new array
 ```go
 a := []int{1,2,3}
-fmt.Println(MapOver(a,func(a int) string { return fmt.Sprintf("-%v-",a+1) }))
+fmt.Println(gouseful.MapOver(a,func(a int) string { return fmt.Sprintf("-%v-",a+1) }))
 ```
 output: `[-2- -3- -4-]`
 
@@ -52,7 +52,7 @@ output: `[-2- -3- -4-]`
 `Insert` - inserts the given element at the given index, shifting all elements after this index one to the right, and returns the new array
 ```go
 a := []string{"a","c","d"}
-fmt.Println(Insert(a,1,"b"))
+fmt.Println(gouseful.Insert(a,1,"b"))
 ```
 output: `[a b c d]`
 
@@ -205,7 +205,7 @@ output: `[1 1 1]`
 
 <br>
 
-`Join` - joins together an array into a string using a provided connector
+`Join` - joins together an array (of any type) into a string using a provided connector
 ```go
 a := []string{"a","b","c"}
 fmt.Println(gouseful.Join(a," - "))
