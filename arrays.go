@@ -117,9 +117,9 @@ func DropWhile[T any](array []T, predicate func(T) bool) []T {
 	return []T{}
 }
 
-func AccumulateAdd[T Num](array []T, initial T) []T {
+func AccumulateAdd[N Num](array []N, initial N) []N {
 	total := initial
-	a := []T{}
+	a := []N{}
 	for _, s := range array {
 		total += s
 		a = append(a,total)
