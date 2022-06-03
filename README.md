@@ -16,6 +16,17 @@ output: `false`
 
 <br>
 
+`Num` - interface that contains all number types (float, int, uint) except complex64 and complex128 for use in generic functions
+```go
+func add[N gouseful.Num](a, b N) N {
+    return a + b
+}
+fmt.Println(add(2.5,2.2),add(3,2))
+```
+output: `4.7 5`
+
+<br>
+
 ## Arrays 
 see tests/arrays_test.go
 
