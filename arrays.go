@@ -78,7 +78,7 @@ func Count[E comparable](array []E, item E) int {
 	return count
 }
 
-func Reverse[E any](array []E) []E {
+func Reverse[T any](array []T) []T {
 	newArray := MakeCopy(array)
 	for i, j := 0, len(newArray)-1; i < j; i, j = i+1, j-1 {
         newArray[i], newArray[j] = newArray[j], newArray[i]
