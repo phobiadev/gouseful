@@ -1,6 +1,6 @@
 package gouseful
 
-func factoradic(n int) []int {
+func factoradic(n,l int) []int {
 	i := 1
 	var r int
 	repr := []int{}
@@ -9,12 +9,12 @@ func factoradic(n int) []int {
 		repr = Unshift(repr,r)
 		i++
 	}
-	return repr
+	return append(Fill(make([]int,l-len(repr)),0),repr...)
 }
 
 func NthPermutation[T any](array []T, n int) []T {
 	newArray := MakeCopy(array)
-	factRepr := factoradic(n)
+	factRepr := factoradic(n,len(array))
 	permutation := []T{}
 	for _, s :=  range factRepr {
 		permutation = append(permutation,newArray[s])
