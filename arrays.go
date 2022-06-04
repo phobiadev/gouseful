@@ -95,6 +95,16 @@ func Count[E comparable](array []E, item E) int {
 	return count
 }
 
+func CountNonComparable[T any](array []T, item T) int {
+	count := 0
+	for _, s := range array {
+		if Compare(s,item) {
+			count++
+		}
+	}
+	return count
+}
+
 func Reverse[T any](array []T) []T {
 	newArray := MakeCopy(array)
 	for i, j := 0, len(newArray)-1; i < j; i, j = i+1, j-1 {
@@ -164,6 +174,10 @@ func Shift[T any](array []T) (T, []T) {
 
 func Includes[E comparable](array []E, item E) bool {
 	return Index(array, item) != -1
+}
+
+func IncludesNonComparable[T any](array []T, item T) bool {
+	return IndexNonComparable(array, item) != -1
 }
 
 func Every[T any](array []T, predicate func(T) bool) bool {
