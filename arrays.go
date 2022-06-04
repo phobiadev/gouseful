@@ -52,8 +52,25 @@ func Index[E comparable](array []E, item E) int {
 	return -1
 }
 
+func IndexNonComparable[T any](array []T, item T) int {
+	for i, s := range array {
+		if Compare(s,item) {
+			return i
+		}
+	}
+	return -1
+}
+
 func Remove[E comparable](array []E, item E) []E {
 	index := Index(array, item)
+	if index == -1 { 
+		return array
+	}
+	return Pop(array,index)
+}
+
+func RemoveNonComparable[T any](array []T, item T) []T {
+	index := IndexNonComparable(array, item)
 	if index == -1 { 
 		return array
 	}

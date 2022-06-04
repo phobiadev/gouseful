@@ -90,12 +90,30 @@ output: `2`
 
 <br>
 
+`IndexNonComparable` - returns the index of the item in the array of non-comparables (if not found, returns -1)
+```go
+a := [][]int{[]int{1,2},[]int{2,3},[]int{3,4}}
+fmt.Println(IndexNonComparable(a,[]int{3,4}))
+```
+output: `2`
+
+<br>
+
 `Remove` - removes an item from the array (first occurence, not all), and returns the new array
 ```go
 a := []string{"a","b","c"}
 fmt.Println(gouseful.Remove(a,"b"))
 ```
 output: `[a c]`
+
+<br>
+
+`RemoveNonComparable` - removes the item from the array of non-comparables (first occurence, not all)
+```go
+a := [][]int{[]int{1,2},[]int{2,3},[]int{3,4}}
+fmt.Println(RemoveNonComparable(a,[]int{3,4}))
+```
+output: `[[1 2] [3 4]]`
 
 <br>
 

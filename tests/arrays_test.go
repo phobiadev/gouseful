@@ -57,9 +57,25 @@ func TestIndex(t *testing.T) {
 	}
 }
 
+func TestIndexNonComparable(t *testing.T) {
+	got := IndexNonComparable([][]int{[]int{1,2},[]int{2,3},[]int{3,4}},[]int{3,4})
+	want := 2
+	if got != want {
+		t.Errorf("got %v, wanted %v", got, want)
+	}
+}
+
 func TestRemove(t *testing.T) {
 	got := Remove([]string{"a","b","c"},"b")
 	want := []string{"a","c"}
+	if !Compare(got,want) {
+		t.Errorf("got %v, wanted %v", got, want)
+	}
+}
+
+func TestRemoveNonComparable(t *testing.T) {
+	got := RemoveNonComparable([][]int{[]int{1,2},[]int{2,3},[]int{3,4}},[]int{2,3})
+	want := [][]int{[]int{1,2},[]int{3,4}}
 	if !Compare(got,want) {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
