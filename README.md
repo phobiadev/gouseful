@@ -134,6 +134,15 @@ output: `2`
 
 <br>
 
+`CountNonComparable` - counts the number of occurences of an item in an array of non-comparables (returns as integer)
+```go
+a := [][]int{[]int{1,2},[]int{2,3},[]int{3,4},[]int{3,4}}
+fmt.Println(gouseful.CountNonComparable(a,[]int{3,4}))
+```
+output: `2`
+
+<br>
+
 `Reverse` - reverses a list and returns the reversed version
 ```go
 a := []string{"a","b","c"}
@@ -206,10 +215,19 @@ output: `a [b c]`
 
 <br>
 
-`Includes` - checks whether or not an item exists in an array
+`Includes` - checks whether or not an item exists in an array of non-comparables
 ```go
 a := []string{"a","b","c"}
 fmt.Println(gouseful.Includes(a,"b"))
+```
+output: `true`
+
+<br>
+
+`IncludesNonComparable` - checks whether or not an item exists in an array
+```go
+a := [][]int{[]int{1,2},[]int{2,3},[]int{3,4}}
+fmt.Println(gouseful.Includes(a,,[]int{3,4}))
 ```
 output: `true`
 

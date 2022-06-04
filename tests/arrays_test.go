@@ -97,6 +97,14 @@ func TestCount(t *testing.T) {
 	}
 }
 
+func TestCountNonComparable(t *testing.T) {
+	got := CountNonComparable([][]int{[]int{1,2},[]int{2,3},[]int{3,4},[]int{3,4}},[]int{3,4})
+	want := 2
+	if got != want {
+		t.Errorf("got %v, wanted %v", got, want)
+	}
+}
+
 func TestReverse(t *testing.T) {
 	got := Reverse([]string{"a","b","c"})
 	want := []string{"c","b","a"}
@@ -168,6 +176,14 @@ func TestShift(t *testing.T) {
 
 func TestIncludes(t *testing.T) {
 	got := Includes([]string{"a","b","c"},"b")
+	want := true
+	if got != want {
+		t.Errorf("got %v, wanted %v", got, want)
+	}
+}
+
+func TestIncludesNonComparable(t *testing.T) {
+	got := IncludesNonComparable([][]int{[]int{1,2},[]int{2,3},[]int{3,4}},[]int{3,4})
 	want := true
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
