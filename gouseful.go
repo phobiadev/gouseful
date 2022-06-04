@@ -9,5 +9,5 @@ type Num interface {
 }
 
 func Compare[E any](a, b E) bool {
-	return fmt.Sprint(a) == fmt.Sprint(b)
+	return fmt.Sprintf("%#v",a) == fmt.Sprint("%#v",b)
 }
