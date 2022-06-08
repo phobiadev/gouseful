@@ -234,3 +234,23 @@ func Reduce[T any](array []T, function func(T, T) T, initial T ) T {
 func Sum[N Num](array []N) N {
 	return Reduce(array, func(tot,curr N) N { return tot + curr }, 0)
 }
+
+func Min[N Num](array []N) N {
+	minimum := array[0]
+	for _, s := range array[1:] {
+		if s < minimum {
+			minimum = s
+		}
+	}
+	return minimum
+}
+
+func Max[N Num](array []N) N {
+	maximum := array[0]
+	for _, s := range array[1:] {
+		if s > maximum {
+			maximum = s
+		}
+	}
+	return maximum
+}

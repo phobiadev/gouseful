@@ -245,3 +245,19 @@ func TestSum(t *testing.T) {
 		t.Errorf("got %v, wanted %v", got, want)
 	} 
 }
+
+func TestMin(t *testing.T) {
+	got := Min([]int{3,5,4,6})
+	want := 3
+	if got != want {
+		t.Errorf("got %v, wanted %v", got, want)
+	} 
+}
+
+func TestMax(t *testing.T) {
+	got := Max([]int{3,5,4,6})
+	want := 6
+	if got != want {
+		t.Errorf("got %v, wanted %v", got, want)
+	} 
+}

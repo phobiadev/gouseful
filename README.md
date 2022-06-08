@@ -10,14 +10,6 @@ see detailed usage below
 
 <br>
 
-`Compare` - compares two variables of any type (even non-comparables) by converting them both to strings
-```go
-fmt.Println(gouseful.Compare([]int{1,2,3},[]int{2,3,4}))
-```
-output: `false`
-
-<br>
-
 `Num` - interface that contains all number types (float, int, uint) except complex64 and complex128 for use in generic functions
 ```go
 func add[N gouseful.Num](a, b N) N {
@@ -26,6 +18,30 @@ func add[N gouseful.Num](a, b N) N {
 fmt.Println(add(2.5,2.2),add(3,2))
 ```
 output: `4.7 5`
+
+<br>
+
+`Compare` - compares two variables of any type (even non-comparables) by converting them both to strings using Sprintf with %#v
+```go
+fmt.Println(gouseful.Compare([]int{1,2,3},[]int{2,3,4}))
+```
+output: `false`
+
+<br>
+
+`CompareWeak` - weakly compares two variables of any (seperate) type by converting them to strings using Sprint rather than Sprintf
+```go
+fmt.Println(gouseful.CompareWeak([]int{1,2,3},[]uint{1,2,3}))
+```
+output: `true`
+
+<br>
+
+`CompareMultiple` - compare infinite items of the same type (any)
+```go
+fmt.Println(gouseful.CompareMultiple([]int{1,2,3},[]int{1,2,3},[]int{1,2,3}))
+```
+output: `true`
 
 <br>
 
@@ -289,6 +305,24 @@ a := []float64{.1,.2,.3,.4}
 fmt.Println(gouseful.Sum(a))
 ```
 output: `1.0`
+
+<br>
+
+`Min` - returns the smallest item in the array
+```go
+a := []int{3,5,4,6}
+fmt.Println(gouseful.Min(a))
+```
+output: `3`
+
+<br>
+
+`Max` - returns the biggest item in the array
+```go
+a := []int{3,5,4,6}
+fmt.Println(gouseful.Max(a))
+```
+output: `6`
 
 <br>
 
