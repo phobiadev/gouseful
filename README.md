@@ -2,7 +2,7 @@
 
 gouseful is a package that provides some useful, generic functions offered by other languages, as well as some more complex ones, such as integer square root, and n'th permutation
 
-live tests can be found at [go.dev/play/p/JlKj_J9_Iaf](https://go.dev/play/p/JlKj_J9_Iaf)
+live tests can be found at [go.dev/play/p/0-nLoNiqP_x](https://go.dev/play/p/0-nLoNiqP_x)
 <br>
 see detailed usage below
 
